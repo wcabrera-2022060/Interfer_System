@@ -6,6 +6,7 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import cors from 'cors'
 import userRoutes from '../src/user/user.routes.js'
+import enterpriseRoutes from '../src/enterprise/enterprise.routes.js'
 
 const app = express()
 config()
@@ -18,6 +19,7 @@ app.use(helmet())
 app.use(morgan('dev'))
 
 app.use(userRoutes)
+app.use(enterpriseRoutes)
 
 export const initServer = () => {
     app.listen(port)
