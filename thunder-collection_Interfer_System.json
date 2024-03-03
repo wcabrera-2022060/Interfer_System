@@ -1,0 +1,439 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Interfer_System",
+    "dateExported": "2024-03-03T02:02:16.439Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "d33c0d8a-cf5c-492a-b6bd-019a471ea7fb",
+            "name": "user",
+            "containerId": "",
+            "created": "2024-03-02T19:12:04.857Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "enterprise",
+            "containerId": "",
+            "created": "2024-03-02T19:12:45.020Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "667a8f29-edb8-4b4d-8fae-726b6f47868e",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "",
+            "name": "createUser",
+            "url": "createUser",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-02T19:14:03.068Z",
+            "modified": "2024-03-02T21:34:32.275Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Weslly"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Alexander"
+                    },
+                    {
+                        "name": "username",
+                        "value": "Des"
+                    },
+                    {
+                        "name": "email",
+                        "value": "wcabrera"
+                    },
+                    {
+                        "name": "password",
+                        "value": "123"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "f60a1963-0606-41a8-ae9e-29c774468044",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "",
+            "name": "login",
+            "url": "login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-02T19:27:40.683Z",
+            "modified": "2024-03-03T00:41:47.233Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "Des"
+                    },
+                    {
+                        "name": "password",
+                        "value": "123"
+                    },
+                    {
+                        "name": "email",
+                        "value": "wcabrera1",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "d789a1fa-d23e-4827-b9f6-2de7a0217dbf",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "d33c0d8a-cf5c-492a-b6bd-019a471ea7fb",
+            "name": "updateUser",
+            "url": "updateUser/65e39b63e34598f611f4bcd0",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-02T19:35:24.302Z",
+            "modified": "2024-03-02T22:57:45.248Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "22"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "22"
+                    },
+                    {
+                        "name": "username",
+                        "value": "22"
+                    },
+                    {
+                        "name": "email",
+                        "value": "22"
+                    },
+                    {
+                        "name": "password",
+                        "value": "",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ab28cd9a-6d9e-49c5-8eee-6a1088fe973c",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "d33c0d8a-cf5c-492a-b6bd-019a471ea7fb",
+            "name": "deleteUser",
+            "url": "deleteUser/65e37d9d7020bf3ad7d5d7c2",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-02T21:28:44.842Z",
+            "modified": "2024-03-02T21:29:24.030Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "499e0b2d-357a-45f9-baca-5be944dbdaa7",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "createEnterprise",
+            "url": "createEnterprise",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-03-02T22:19:00.664Z",
+            "modified": "2024-03-03T01:15:08.865Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Google"
+                    },
+                    {
+                        "name": "address",
+                        "value": "EEUU"
+                    },
+                    {
+                        "name": "impactLevel",
+                        "value": "High"
+                    },
+                    {
+                        "name": "yearsTrajectory",
+                        "value": "56"
+                    },
+                    {
+                        "name": "category",
+                        "value": "Tecnología"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "3a2e7b7c-568b-466e-953c-63587a3b2c95",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "updateEnterprise",
+            "url": "updateEnterprise/65e3a6fd5012be4c999cc05f",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-03-02T22:55:10.114Z",
+            "modified": "2024-03-03T02:01:28.821Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Amazon"
+                    },
+                    {
+                        "name": "address",
+                        "value": "EU"
+                    },
+                    {
+                        "name": "impactLevel",
+                        "value": "High"
+                    },
+                    {
+                        "name": "yearsTrajectory",
+                        "value": "10"
+                    },
+                    {
+                        "name": "category",
+                        "value": "Ventas"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "e469af6f-3717-4a39-bab2-98fb826ed5d9",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "getEnterprises",
+            "url": "getEnterprises",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-03-02T23:34:00.379Z",
+            "modified": "2024-03-02T23:34:17.029Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3ff78c68-b093-4643-aa2e-7bdc84663de6",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "enterpriseOrderA_Z",
+            "url": "enterprisesOrderA_Z",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-03-02T23:51:14.715Z",
+            "modified": "2024-03-02T23:51:33.253Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fe9b9cc5-0a95-470f-8998-800c9773414c",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "enterpriseOrderZ_A",
+            "url": "enterprisesOrderZ_A",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-03-02T23:52:08.657Z",
+            "modified": "2024-03-02T23:52:24.548Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "82cf6ba4-136e-48f7-b8ac-5617c8122826",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "enterprisesOrderYearsASC",
+            "url": "enterprisesOrderYearsASC",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-03-02T23:57:54.959Z",
+            "modified": "2024-03-02T23:58:10.242Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b2a99b20-3743-4cb7-92fe-6f7086afe15d",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "enterprisesOrderYearsDESC",
+            "url": "enterprisesOrderYearsDESC",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-03-02T23:58:27.313Z",
+            "modified": "2024-03-02T23:58:49.771Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8b717703-6eaf-4bcd-8a05-4db9551474b5",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "generateReport",
+            "url": "generateReport",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-03-03T00:21:26.890Z",
+            "modified": "2024-03-03T00:22:10.236Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "57a4be5d-2791-4c91-abc4-677c541c9ca3",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "enterprisesByCategory",
+            "url": "enterprisesByCategory",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2024-03-03T00:49:07.754Z",
+            "modified": "2024-03-03T00:53:03.501Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "category",
+                        "value": "Tecnología"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "9fa0997b-4e7f-4963-a0e9-a55cea0b4f43",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "enterprisesByImpactLevelASC",
+            "url": "enterprisesByImpactLevelASC",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-03-03T01:30:45.930Z",
+            "modified": "2024-03-03T01:30:56.796Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "149042a8-2fb6-41f8-b143-5f5ac48cbd4e",
+            "colId": "7b5a4860-a6ea-4c6c-91d6-90b87aa15359",
+            "containerId": "967ef61d-2b0c-4663-93fb-5689033c069e",
+            "name": "enterprisesByImpactLevelDESC",
+            "url": "enterprisesByImpactLevelDESC",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2024-03-03T01:57:47.076Z",
+            "modified": "2024-03-03T01:57:57.887Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "{{token}}"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost:3300/"
+        },
+        "envId": "0a598600-1657-41aa-a02e-aa0e3a67b4af"
+    }
+}

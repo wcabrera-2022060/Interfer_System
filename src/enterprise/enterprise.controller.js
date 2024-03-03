@@ -1,6 +1,7 @@
 'use strict'
 
 import Enterprise from '../enterprise/enterprise.model.js'
+import xlsx from 'xlsx-populate'
 
 export const createEnterprise = async (req, res) => {
     try {
@@ -95,5 +96,83 @@ export const enterprisesOrderZ_A = async (req, res) => {
     } catch (error) {
         console.error(error)
         return res.status(500).send({ message: 'Error getting enterprises' })
+    }
+}
+
+export const enterprisesByCategory = async (req, res) => {
+    try {
+        let { category } = req.body
+        let enterprises = await Enterprise.find({ category: category })
+        if (!enterprises) return res.status(404).send({ message: 'Enterprises not found' })
+        return res.send({ message: 'Enterprises found', enterprises })
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'Error getting enterprises' })
+    }
+}
+
+export const enterprisesByImpactLevelDESC = async (req, res) => {
+    try {
+        let enterprises = await Enterprise.find({})
+        if (!enterprises) return res.status(404).send({ message: 'Enterprises not found' })
+
+        enterprises.sort((a, b) => {
+            const order = { HIGH: 3, MEDIUM: 2, LOW: 1 }
+            return order[b.impactLevel] - order[a.impactLevel]
+        })
+
+        return res.send({ message: 'Enterprises found', enterprises })
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'Error getting enterprises' })
+    }
+}
+
+export const enterprisesByImpactLevelASC = async (req, res) => {
+    try {
+        let enterprises = await Enterprise.find({})
+        if (!enterprises) return res.status(404).send({ message: 'Enterprises not found' })
+
+        enterprises.sort((a, b) => {
+            const order = { HIGH: 1, MEDIUM: 2, LOW: 3 }
+            return order[b.impactLevel] - order[a.impactLevel]
+        })
+
+        return res.send({ message: 'Enterprises found', enterprises })
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'Error getting enterprises' })
+    }
+}
+
+export const generateReport = async (req, res) => {
+    try {
+        let enterprises = await Enterprise.find({})
+        if (!enterprises) return res.status(404).send({ message: 'Enterprises not found' })
+
+        const workbook = await xlsx.fromBlankAsync()
+        const sheet = workbook.sheet(0)
+        sheet.cell('A1').value('ID')
+        sheet.cell('B1').value('Name')
+        sheet.cell('C1').value('Address')
+        sheet.cell('D1').value('Impact Level')
+        sheet.cell('E1').value('Years Trajectory')
+        sheet.cell('F1').value('Category')
+
+        let i = 2
+        for (const enterprise of enterprises) {
+            sheet.cell(`A${i}`).value(enterprise._id.toString())
+            sheet.cell(`B${i}`).value(enterprise.name)
+            sheet.cell(`C${i}`).value(enterprise.address)
+            sheet.cell(`D${i}`).value(enterprise.impactLevel)
+            sheet.cell(`E${i}`).value(enterprise.yearsTrajectory)
+            sheet.cell(`F${i}`).value(enterprise.category)
+            i++
+        }
+        await workbook.toFileAsync('Enterprises Report.xlsx')
+        return res.send({ message: 'Report created succesfully' })
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'Error creating report' })
     }
 }
